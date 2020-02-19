@@ -7,6 +7,11 @@ import { Link } from 'react-router-dom';
     return(
         <div className="col-12 col-md-5 m-1">
                 <Card>
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>DishDetail</BreadcrumbItem>
+                    </Breadcrumb>
                     <CardImg top src={dish.image} alt={dish.name}></CardImg>
                     <CardBody>
                       <CardTitle>{dish.name}</CardTitle>
@@ -35,25 +40,25 @@ import { Link } from 'react-router-dom';
             </div>
         );
         else
-            return(
-                <div></div>
-            );
+        return(
+            <div></div>
+        );
     }
 
     const DishDetail = (props) => {
         if (props.dish != null)
             return(
-                <div class="container">
+                <div className="container">
                     <div className="row">
                         <RenderDish dish={props.dish} />
-                        <RenderComments comments={props.dish.comments} /> 
+                        <RenderComments comments={props.dish.comments}/> 
                     </div>
                 </div>
             );
         else
-            return(
-                <div></div>
-            );
+        return(
+            <div></div>
+        );
     }
  
 
