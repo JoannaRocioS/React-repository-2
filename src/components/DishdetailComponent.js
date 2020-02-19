@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 
-class Dishdetail extends Component {
+class DishDetail extends Component {
 
     constructor(props) {
         super(props);
@@ -31,15 +31,15 @@ class Dishdetail extends Component {
     renderComments(comments) {
         if (comments != null)
         {
-            const Comments = comments.map((comment) => {
-                const date = new Date(comment.date);
-                return (
-                    <div className="col-6 col-md-4 m-1" >
-                        <div>{comment.comment}</div>
-                        <div>-- {comment.author} , {date.toLocaleDateString()} </div>
-                    </div>
-                );
-            });
+             const Comments = comments.map((comment) => {
+                 const date = new Date(comment.date);
+                 return (
+                     <div className="col-6 col-md-4 m-1" >
+                         <div>{comment.comments}</div>
+                         <div>-- {comment.author} , {date.toLocaleDateString()} </div>
+                     </div>
+                 );
+             });
 
             return ( 
                 <div>           
@@ -77,4 +77,4 @@ class Dishdetail extends Component {
     }
 } 
 
-export default Dishdetail;
+export default DishDetail;
